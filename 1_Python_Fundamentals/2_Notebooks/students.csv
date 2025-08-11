@@ -1,0 +1,4 @@
+student_id,f_name,l_name,email,university,major
+101,"Foo","Bar","foobar@test.com","Harvard","Data Science"
+102,"Biz","Baz","bizbaz@test.com","",""
+103,"Bing","Bang","bingbang@test.com","MIT","Computer Science"
