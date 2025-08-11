@@ -32,6 +32,18 @@ MANIFEST
 *.manifest
 *.spec
 
+# Jupyter Notebook files
+.ipynb_checkpoints/
+
+# Anaconda
+.conda/
+conda-meta/
+*.conda
+*.env
+envs/
+.anaconda_backup/
+anaconda_projects/
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
