@@ -13,3 +13,7 @@ The demos in this repository are part of the [Python for Data Science and Machin
 ### Python Fundamentals
 
 - [TBD](https://www.youtube.com/@cumuluscycles)
+
+### Statistical Thinking in Data Science
+
+- [TBD](https://www.youtube.com/@cumuluscycles)
