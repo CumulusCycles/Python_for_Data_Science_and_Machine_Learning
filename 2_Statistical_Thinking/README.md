@@ -57,7 +57,7 @@ Data can be classified as:
        - Xi = each value in the population
        - N = total number of values
 
-     - **Sample Mean** (μ):
+     - **Sample Mean** (x-bar):
 
        ![Sample Mean Formula](./img/f_1_2.png)
 
