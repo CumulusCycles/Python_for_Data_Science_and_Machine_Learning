@@ -12,4 +12,4 @@ The demos in this repository are part of the [Python for Data Science and Machin
 
 ### Demos
 
-- [Python Fundamentals](hhttps://youtu.be/_Ey2C2hSsAA)
+- [Python Fundamentals](https://youtu.be/_Ey2C2hSsAA)
