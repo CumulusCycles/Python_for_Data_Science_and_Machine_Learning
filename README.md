@@ -10,10 +10,6 @@ The demos in this repository are part of the [Python for Data Science and Machin
 - [Install Jupyter Notebook in a Python Virtual Environment](https://www.youtube.com/watch?v=z-_GDQRLtbo)
 - [Install Anaconda on a Mac](https://www.youtube.com/watch?v=bAQ6smgoe5c)
 
-### Python Fundamentals
+### Demos
 
-- [TBD](https://www.youtube.com/@cumuluscycles)
-
-### Statistical Thinking in Data Science
-
-- [TBD](https://www.youtube.com/@cumuluscycles)
+- [Python Fundamentals](hhttps://youtu.be/_Ey2C2hSsAA)
