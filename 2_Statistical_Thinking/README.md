@@ -2,6 +2,8 @@
 
 ## Statistics
 
+See `demo.ipynb` for practical demonstrations.
+
 ### Overview
 
 Statistics forms the foundation of data science, equipping practitioners with mathematical tools to collect, analyze, interpret, and present data. These tools enable data scientists to extract insights, make predictions, and support decision-making through data-driven approaches.
