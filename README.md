@@ -13,3 +13,6 @@ The demos in this repository are part of the [Python for Data Science and Machin
 ### Demos
 
 - [Python Fundamentals](https://youtu.be/_Ey2C2hSsAA)
+- [NumPy](https://youtu.be/5fyYPCrwlDg)
+- Pandas: TBD
+- MySQL Connector/Python: TBD
