@@ -1,0 +1,95 @@
+Make,Model,Year,Mileage,Miles Per Gallon,engine size,Transmission,FuelType,Price
+Ferrari,488 GTB,2021,12000,18,3.9L V8,Automatic,Petrol,320000
+Ferrari,488 GTB,2021,12000,18,3.9L V8,Automatic,Petrol,320000
+Lamborghini,Aventador,2020,9000,15,6.5L V12,Automatic,Petrol,400000
+Lamborghini,Aventador,2020,9000,15,6.5L V12,Automatic,Petrol,400000
+Porsche,911 Turbo S,2022,8000,20,3.8L H6,Automatic,Petrol,210000
+Porsche,911 Turbo S,2022,8000,20,3.8L H6,Automatic,Petrol,210000
+Bentley,Continental GT,2021,15000,19,4.0L V8,Automatic,Petrol,220000
+Aston Martin,DB11,2022,7000,20,4.0L V8,Automatic,Petrol,NaN
+Rolls-Royce,Wraith,2020,5000,14,6.6L V12,Automatic,Petrol,350000
+Maserati,Quattroporte,2021,11000,17,3.0L V6,Automatic,Petrol,140000
+Mercedes-Benz,S63 AMG,2022,6000,19,4.0L V8,Automatic,Petrol,180000
+BMW,M8 Competition,2021,13000,18,4.4L V8,Automatic,Petrol,160000
+Audi,RS7,2022,9000,21,4.0L V8,Automatic,Petrol,135000
+Jaguar,F-Type SVR,2021,10000,19,5.0L V8,Automatic,Petrol,125000
+Tesla,Model S Plaid,2022,4000,102,Electric,Automatic,Electric,135000
+McLaren,720S,2021,8000,18,4.0L V8,Automatic,Petrol,300000
+Ferrari,Portofino,2022,5000,22,3.9L V8,Automatic,Petrol,230000
+Lamborghini,Huracan EVO,2021,12000,16,5.2L V10,Automatic,Petrol,250000
+Porsche,Panamera Turbo,2022,7000,20,4.0L V8,Automatic,Petrol,NaN
+Bentley,Flying Spur,2021,9000,17,6.0L W12,Automatic,Petrol,260000
+Aston Martin,Vantage,2022,6000,21,4.0L V8,Automatic,Petrol,150000
+Rolls-Royce,Ghost,2021,4000,15,6.75L V12,Automatic,Petrol,320000
+Maserati,Levante Trofeo,2022,8000,16,3.8L V8,Automatic,Petrol,NaN
+Mercedes-Benz,AMG GT,2021,11000,19,4.0L V8,Automatic,Petrol,140000
+BMW,Alpina B7,2022,5000,20,4.4L V8,Automatic,Petrol,170000
+Audi,S8,2021,9000,22,4.0L V8,Automatic,Petrol,130000
+,,,,,,,,
+Tesla,Model X Plaid,2021,3000,96,Electric,Automatic,Electric,140000
+McLaren,GT,2022,6000,22,4.0L V8,Automatic,Petrol,210000
+Ferrari,F8 Tributo,2021,10000,19,3.9L V8,Automatic,Petrol,270000
+Lamborghini,Urus,2022,8000,14,4.0L V8,Automatic,Petrol,220000
+Porsche,Cayenne Turbo,2021,12000,17,4.0L V8,Automatic,Petrol,150000
+Bentley,Bentayga,2022,9000,15,6.0L W12,Automatic,Petrol,240000
+Aston Martin,DBS Superleggera,2021,7000,17,5.2L V12,Automatic,Petrol,310000
+Rolls-Royce,Phantom,2022,4000,12,6.75L V12,Automatic,Petrol,450000
+Maserati,MC20,2021,8000,24,3.0L V6,Automatic,Petrol,210000
+Mercedes-Benz,Maybach S650,2022,5000,16,6.0L V12,Automatic,Petrol,250000
+BMW,M760Li,2021,9000,15,6.6L V12,Automatic,Petrol,180000
+Audi,R8 V10 Plus,2022,7000,16,5.2L V10,Automatic,Petrol,200000
+Jaguar,F-Pace SVR,2021,6000,18,5.0L V8,Automatic,Petrol,95000
+Tesla,Model Y Performance,2022,4000,91,Electric,Automatic,Electric,NaN
+McLaren,Artura,2021,10000,50,3.0L V6 Hybrid,Automatic,Hybrid,230000
+Ferrari,812 Superfast,2022,8000,15,6.5L V12,Automatic,Petrol,340000
+,,,,,,,,
+Porsche,Taycan Turbo S,2022,3000,79,Electric,Automatic,Electric,185000
+Bentley,Mulsanne,2021,7000,14,6.75L V8,Automatic,Petrol,310000
+Aston Martin,Rapide AMR,2022,9000,18,6.0L V12,Automatic,Petrol,NaN
+Rolls-Royce,Dawn,2021,4000,14,6.6L V12,Automatic,Petrol,330000
+Maserati,Ghibli Trofeo,2022,8000,17,3.8L V8,Automatic,Petrol,120000
+Mercedes-Benz,AMG E63 S,2021,11000,20,4.0L V8,Automatic,Petrol,120000
+BMW,M5 CS,2022,5000,18,4.4L V8,Automatic,Petrol,140000
+Audi,RS Q8,2021,9000,15,4.0L V8,Automatic,Petrol,115000
+Jaguar,XE SV Project 8,2022,7000,18,5.0L V8,Automatic,Petrol,NaN
+Tesla,Model 3 Performance,2021,3000,82,Electric,Automatic,Electric,65000
+McLaren,765LT,2022,6000,17,4.0L V8,Automatic,Petrol,380000
+Ferrari,GTC4Lusso,2021,10000,15,6.3L V12,Automatic,Petrol,NaN
+Lamborghini,Centenario,2022,8000,13,6.5L V12,Automatic,Petrol,2000000
+Porsche,Macan Turbo,2021,12000,19,2.9L V6,Automatic,Petrol,85000
+Bentley,Azure,2022,9000,13,6.8L V8,Automatic,Petrol,350000
+Aston Martin,Cygnet,2021,7000,56,1.3L I4,Automatic,Petrol,40000
+,,,,,,,,
+Maserati,GranTurismo,2021,8000,16,4.7L V8,Automatic,Petrol,130000
+Mercedes-Benz,AMG G63,2022,5000,13,4.0L V8,Automatic,Petrol,160000
+BMW,X7 M50i,2021,9000,15,4.4L V8,Automatic,Petrol,110000
+Audi,Q8 60 TFSI e,2022,7000,65,3.0L V6 Hybrid,Automatic,Hybrid,95000
+Jaguar,E-Pace P300,2021,6000,23,2.0L I4,Automatic,Petrol,55000
+Tesla,Model S Plaid,2022,4000,102,Electric,Automatic,Electric,135000
+McLaren,Speedtail,2021,10000,21,4.0L V8 Hybrid,Automatic,Hybrid,2200000
+Ferrari,LaFerrari,2022,8000,16,6.3L V12 Hybrid,Automatic,Hybrid,NaN
+Lamborghini,Veneno,2021,5000,11,6.5L V12,Automatic,Petrol,4000000
+Porsche,918 Spyder,2022,3000,67,4.6L V8 Hybrid,Automatic,Hybrid,1600000
+Bentley,Brooklands,2021,7000,13,6.8L V8,Automatic,Petrol,250000
+Aston Martin,One-77,2022,9000,15,7.3L V12,Automatic,Petrol,1800000
+Rolls-Royce,Boat Tail,2021,4000,12,6.75L V12,Automatic,Petrol,28000000
+Maserati,Bora,2022,8000,14,4.7L V8,Manual,Petrol,90000
+Mercedes-Benz,SL65 AMG,2021,11000,15,6.0L V12,Automatic,Petrol,220000
+BMW,Z8,2022,5000,19,4.9L V8,Manual,Petrol,250000
+Audi,RS6 Avant,2021,9000,21,4.0L V8,Automatic,Petrol,120000
+Jaguar,XKR-S,2022,7000,18,5.0L V8,Automatic,Petrol,90000
+Tesla,Model X Plaid,2021,3000,96,Electric,Automatic,Electric,NaN
+McLaren,P1,2022,6000,34,3.8L V8 Hybrid,Automatic,Hybrid,1400000
+Ferrari,Enzo,2021,10000,12,6.0L V12,Manual,Petrol,2800000
+Lamborghini,Reventón,2022,8000,10,6.5L V12,Automatic,Petrol,1500000
+Porsche,Carrera GT,2021,12000,15,5.7L V10,Manual,Petrol,1200000
+Bentley,Arnage,2022,9000,13,6.8L V8,Automatic,Petrol,180000
+Aston Martin,Vulcan,2021,7000,11,7.0L V12,Manual,Petrol,2300000
+Rolls-Royce,Silver Ghost,2022,4000,10,7.4L I6,Manual,Petrol,NaN
+Maserati,Shamal,2021,8000,15,3.2L V8,Manual,Petrol,80000
+Mercedes-Benz,CLK GTR,2022,5000,8,6.9L V12,Manual,Petrol,1500000
+BMW,M1,2021,9000,17,3.5L I6,Manual,Petrol,900000
+Audi,Quattro Sport,2022,7000,20,2.1L I5,Manual,Petrol,400000
+Jaguar,XJ220,2021,6000,17,3.5L V6,Manual,Petrol,500000
+Tesla,Model 3 Performance,2021,3000,82,Electric,Automatic,Electric,65000
+McLaren,F1,2022,10000,15,6.1L V12,Manual,Petrol,20000000
