@@ -15,4 +15,4 @@ The demos in this repository are part of the [Python for Data Science and Machin
 - [Python Fundamentals](https://youtu.be/_Ey2C2hSsAA)
 - [NumPy](https://youtu.be/5fyYPCrwlDg)
 - [Pandas](https://youtu.be/wUWxc6VYU98)
-- MySQL Connector/Python: TBD
+- [Load, cleanse and persist data from a CSV to MySQL using NumPy and Pandas](https://youtu.be/0oIGqKbV79g)
