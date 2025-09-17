@@ -1,0 +1,18 @@
+# Use official Python image as base
+FROM python:3.12-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy application files
+COPY app.py ./
+COPY templates/ ./templates/
+
+# Install dependencies
+RUN pip install flask requests
+
+# Expose port for Flask app
+EXPOSE 5001
+
+# Start the Flask app
+CMD ["python", "app.py"]
