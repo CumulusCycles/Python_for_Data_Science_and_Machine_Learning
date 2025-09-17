@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: apiDockerfile
+    image: pima-diabetes-predictor-api
+    container_name: pima-diabetes-predictor-api
+    ports:
+      - "8081:8081"
+    networks:
+      - appnet
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: appDockerfile
+    image: pima-diabetes-predictor-app
+    container_name: pima-diabetes-predictor-app
+    ports:
+      - "5001:5000"
+    networks:
+      - appnet
+    restart: unless-stopped
+
+networks:
+  appnet:
+    driver: bridge
