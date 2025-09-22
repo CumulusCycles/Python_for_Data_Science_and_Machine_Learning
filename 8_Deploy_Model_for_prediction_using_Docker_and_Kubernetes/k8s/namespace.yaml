@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: diabetes-predictor
+  labels:
+    name: diabetes-predictor
+    app: pima-diabetes-predictor

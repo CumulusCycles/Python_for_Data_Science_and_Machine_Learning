@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pima Diabetes Prediction App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #333;
+      }
+      .section {
+        margin: 30px 0;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+      }
+      .btn {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+      .btn-success {
+        background-color: #28a745;
+      }
+      .btn-success:hover {
+        background-color: #1e7e34;
+      }
+      .form-group {
+        margin: 15px 0;
+      }
+      .form-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .form-row .form-group {
+        flex: 1;
+        min-width: 200px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .json-display {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        padding: 15px;
+        margin: 15px 0;
+        font-family: monospace;
+        white-space: pre-wrap;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+      .error {
+        color: #dc3545;
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        padding: 15px;
+        border-radius: 4px;
+        margin: 15px 0;
+      }
+      .result-success {
+        color: #155724;
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+        padding: 15px;
+        border-radius: 4px;
+        margin: 15px 0;
+      }
+      .result-warning {
+        color: #856404;
+        background-color: #fff3cd;
+        border: 1px solid #ffeaa7;
+        padding: 15px;
+        border-radius: 4px;
+        margin: 15px 0;
+      }
+      .populate-btn {
+        background-color: #6c757d;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+      .populate-btn:hover {
+        background-color: #545b62;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🏥 Pima Diabetes Prediction App</h1>
+
+      <!-- Error Message -->
+      {% if error_message %}
+      <div class="error"><strong>Error:</strong> {{ error_message }}</div>
+      {% endif %}
+
+      <!-- Section 1: Get Patient Data -->
+      <div class="section">
+        <h2>📋 Get Sample Patient Data</h2>
+        <p>Retrieve example patient data from the API:</p>
+
+        <form method="post">
+          <input type="hidden" name="action" value="get_patient_data" />
+          <div class="form-group">
+            <label for="diabetic_type">Patient Type:</label>
+            <select name="diabetic_type" id="diabetic_type">
+              <option value="1">Diabetic Patient</option>
+              <option value="0">Non-Diabetic Patient</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Get Patient Data</button>
+        </form>
+
+        <!-- Display Patient Data -->
+        {% if patient_data %}
+        <h3>Retrieved Patient Data:</h3>
+        <div class="json-display">{{ patient_data | tojson(indent=2) }}</div>
+        <button onclick="populateForm(patientData)" class="populate-btn">
+          📝 Populate Prediction Form with This Data
+        </button>
+        <script>
+          // Store patient data in a JavaScript variable to avoid JSON parsing issues
+          var patientData = {{ patient_data | tojson | safe }};
+        </script>
+        {% endif %}
+      </div>
+
+      <!-- Section 2: Make Prediction -->
+      <div class="section">
+        <h2>🔮 Make Diabetes Prediction</h2>
+        <p>Enter patient data to get a prediction:</p>
+
+        <form method="post" id="predictionForm">
+          <input type="hidden" name="action" value="predict" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="pregnancies">Pregnancies:</label>
+              <input
+                type="number"
+                name="pregnancies"
+                id="pregnancies"
+                min="0"
+                max="20"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="glucose">Glucose (mg/dL):</label>
+              <input
+                type="number"
+                name="glucose"
+                id="glucose"
+                min="0"
+                max="300"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="blood_pressure">Blood Pressure (mm Hg):</label>
+              <input
+                type="number"
+                name="blood_pressure"
+                id="blood_pressure"
+                min="0"
+                max="200"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="skin_thickness">Skin Thickness (mm):</label>
+              <input
+                type="number"
+                name="skin_thickness"
+                id="skin_thickness"
+                min="0"
+                max="100"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="insulin">Insulin (mu U/ml):</label>
+              <input
+                type="number"
+                name="insulin"
+                id="insulin"
+                min="0"
+                max="1000"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="bmi">BMI:</label>
+              <input
+                type="number"
+                name="bmi"
+                id="bmi"
+                step="0.1"
+                min="0"
+                max="70"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="diabetes_pedigree_function"
+                >Diabetes Pedigree Function:</label
+              >
+              <input
+                type="number"
+                name="diabetes_pedigree_function"
+                id="diabetes_pedigree_function"
+                step="0.001"
+                min="0"
+                max="3"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="age">Age (years):</label>
+              <input
+                type="number"
+                name="age"
+                id="age"
+                min="1"
+                max="120"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-success">
+            🔮 Get Prediction
+          </button>
+        </form>
+      </div>
+
+      <!-- Section 3: Prediction Results -->
+      {% if prediction_result %}
+      <div class="section">
+        <h2>📊 Prediction Results</h2>
+
+        {% if prediction_result.prediction_label == "Diabetic" %}
+        <div class="result-warning">
+          <h3>⚠️ Prediction: {{ prediction_result.prediction_label }}</h3>
+          <p>The model predicts this patient has a high risk of diabetes.</p>
+        </div>
+        {% else %}
+        <div class="result-success">
+          <h3>✅ Prediction: {{ prediction_result.prediction_label }}</h3>
+          <p>The model predicts this patient has a low risk of diabetes.</p>
+        </div>
+        {% endif %} {% if prediction_result.probabilities %}
+        <h4>Prediction Probabilities:</h4>
+        <ul>
+          <li>
+            <strong>Not Diabetic:</strong> {{
+            "%.2f"|format(prediction_result.probabilities["Not Diabetic"] * 100)
+            }}%
+          </li>
+          <li>
+            <strong>Diabetic:</strong> {{
+            "%.2f"|format(prediction_result.probabilities["Diabetic"] * 100) }}%
+          </li>
+        </ul>
+        {% endif %}
+
+        <h4>Full API Response:</h4>
+        <div class="json-display">
+          {{ prediction_result | tojson(indent=2) }}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- API Health Check -->
+      <div class="section">
+        <h2>🔧 API Health Check</h2>
+        <p>Check if the FastAPI service is running:</p>
+
+        <form method="post" style="display: inline">
+          <input type="hidden" name="action" value="check_health" />
+          <button type="submit" class="btn">Check API Health</button>
+        </form>
+
+        <p><small>API should be running at: http://127.0.0.1:8081</small></p>
+
+        <!-- Display Health Check Results -->
+        {% if health_result %}
+        <div
+          class="{% if health_result.success %}result-success{% else %}error{% endif %}"
+          style="margin-top: 20px"
+        >
+          <h3>{{ health_result.status }}</h3>
+
+          {% if health_result.success %}
+          <p><strong>Status Code:</strong> {{ health_result.status_code }}</p>
+          {% if health_result.api_response %}
+          <h4>API Response:</h4>
+          <div class="json-display">
+            {{ health_result.api_response | tojson(indent=2) }}
+          </div>
+          {% endif %} {% else %} {% if health_result.status_code %}
+          <p><strong>Status Code:</strong> {{ health_result.status_code }}</p>
+          {% endif %} {% if health_result.error %}
+          <p><strong>Error:</strong> {{ health_result.error }}</p>
+          {% endif %} {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <script>
+      function populateForm(data) {
+        // Populate the prediction form with the retrieved patient data
+        document.getElementById("pregnancies").value = data.pregnancies || "";
+        document.getElementById("glucose").value = data.glucose || "";
+        document.getElementById("blood_pressure").value =
+          data.blood_pressure || "";
+        document.getElementById("skin_thickness").value =
+          data.skin_thickness || "";
+        document.getElementById("insulin").value = data.insulin || "";
+        document.getElementById("bmi").value = data.bmi || "";
+        document.getElementById("diabetes_pedigree_function").value =
+          data.diabetes_pedigree_function || "";
+        document.getElementById("age").value = data.age || "";
+
+        // Scroll to the prediction form
+        document
+          .getElementById("predictionForm")
+          .scrollIntoView({ behavior: "smooth" });
+
+        // Highlight the form briefly
+        const form = document.getElementById("predictionForm");
+        form.style.border = "3px solid #007bff";
+        setTimeout(() => {
+          form.style.border = "none";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
