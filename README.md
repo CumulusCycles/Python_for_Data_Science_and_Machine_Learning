@@ -17,4 +17,4 @@ The demos in this repository are part of the [Python for Data Science and Machin
 - [Pandas](https://youtu.be/wUWxc6VYU98)
 - [Load, cleanse and persist data from a CSV to MySQL using NumPy and Pandas](https://youtu.be/0oIGqKbV79g)
 - [Model Training, Prediction and Evaluation with Scikit-Learn](https://youtu.be/5zVLuCfAtQ0)
-- End-to-End Model Tain and Deploy in Docker - video TBD
+- [End-to-End Model Training, Predictions, Validation and Deployment in Docker](https://youtu.be/j3TxbUUt_h4)

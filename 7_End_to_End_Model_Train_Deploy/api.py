@@ -1,49 +1,40 @@
-# FAST API file for pima_diabetes_svmc_predicter
-
-# pip install fastapi uvicorn joblib numpy pydantic
-# To run the app: uvicorn api:app --host 0.0.0.0 --port 8081
-# Access the docs at: http://127.0.0.1:8081/docs
-
-"""
-Test Data 
-
-Diabetic Patient:
-{
-    "pregnancies": 8,
-    "glucose": 155,
-    "blood_pressure": 85,
-    "skin_thickness": 40,
-    "insulin": 210,
-    "bmi": 35.2,
-    "diabetes_pedigree_function": 0.745,
-    "age": 45
-}
-
-Non-Diabetic Patient:
-{
-    "pregnancies": 2,
-    "glucose": 75,
-    "blood_pressure": 70,
-    "skin_thickness": 30,
-    "insulin": 50,
-    "bmi": 25.0,
-    "diabetes_pedigree_function": 0.5,
-    "age": 22
-}
-"""
-
-# Import necessary libraries
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel
 import joblib
 import numpy as np
-from pydantic import BaseModel
+
+# Example patient data collections
+patient_data = {
+    "diabetic": {
+        "pregnancies": 8,
+        "glucose": 155,
+        "blood_pressure": 85,
+        "skin_thickness": 40,
+        "insulin": 210,
+        "bmi": 35.2,
+        "diabetes_pedigree_function": 0.745,
+        "age": 45
+    },
+    "non_diabetic": {
+        "pregnancies": 2,
+        "glucose": 75,
+        "blood_pressure": 70,
+        "skin_thickness": 30,
+        "insulin": 50,
+        "bmi": 25.0,
+        "diabetes_pedigree_function": 0.5,
+        "age": 22
+    }
+}
+
+# Create FastAPI instance
+app = FastAPI(title="Pima Diabetes Logistic Regression Prediction API")
 
 
 # Load the model from the file
 lr_loaded = joblib.load('pima_diabetes_lr_predicter.joblib')
 
-# Create FastAPI instance
-app = FastAPI(title="Pima Diabetes Logistic Regression Prediction API")
 
 # Define the input data model
 class PatientData(BaseModel):
@@ -56,9 +47,20 @@ class PatientData(BaseModel):
     diabetes_pedigree_function: float
     age: int
 
+
 @app.get("/health")
 def health_check():
     return {"status": "API is healthy"}
+
+
+@app.get("/patient_data")
+def get_patient_data(diabetic: int = 1):
+    if diabetic == 1:
+        data = patient_data["diabetic"]
+    else:
+        data = patient_data["non_diabetic"]
+    return JSONResponse(content=data)
+
 
 @app.post("/predict")
 def make_prediction(data: PatientData):
@@ -88,3 +90,5 @@ def make_prediction(data: PatientData):
             verbose_result["probabilities_error"] = str(e)
     
     return verbose_result
+
+
