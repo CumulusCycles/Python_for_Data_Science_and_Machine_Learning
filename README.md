@@ -21,6 +21,3 @@ The demos in this repository are part of the [Python for Data Science and Machin
 - [End-to-End Model Training, Predictions, Validation and Deployment in Docker](https://youtu.be/j3TxbUUt_h4)
 - [ML Model Deployment with Kubernetes](https://youtu.be/kPEXSPeIyTs)
 - Deep Learning Overview ([optional reading](https://github.com/CumulusCycles/Python_for_Data_Science_and_Machine_Learning/tree/main/9_Deep_Learning_Overview))
-- PyTorch - TBD
-- TensorFlow - TBD
-- Keras - TBD

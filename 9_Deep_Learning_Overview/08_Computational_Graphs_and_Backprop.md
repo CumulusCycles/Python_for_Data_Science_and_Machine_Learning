@@ -235,6 +235,10 @@ Understanding these helps you see why certain activations work better:
 
 ### Simple PyTorch Example
 
+```bash
+pip install torch
+```
+
 ```python
 import torch
 
