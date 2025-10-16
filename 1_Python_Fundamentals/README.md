@@ -15,3 +15,5 @@ Please note that the demo videos for these examples will be shown in [Jupyter No
 - Error Handling (Try/Except blocks)
 - Modules (Importing and using modules)
 - Object-Oriented Programming (Classes and objects)
+- Generators (-vs- Functions)
+- Zip and Enumerate
